@@ -1,0 +1,93 @@
+CIENCIA DE LOS DATOS
+
+Comandos de CLASE
+
+Comandos 
+head -n 1 urban-agriculture.csv | tr ',' '\n'
+
+# cambio , por ; del archivo de agricultura y lo guardo en salida.csv
+tr ',' ';' < urban-agriculture.csv > salida.csv  
+
+'s/ patron / patron /g'
+# para buscar una fecha de un digito y ponerle un 0 al principio
+$ sed 's/,\([0-9]\)\//,0\1//g'  
+
+sed 's/\/\([0-9]\)\//\/0\1\//g' < demo.txt 
+
+# cambiamos el eslach por guion en el archivo
+ sed 's/\//\-/g' < demo.txt   
+
+# vemos los ultimos 10 lineas
+ tail -n 10 urban-agriculture.csv 
+
+# hacemos un append a nuevo.txt
+tail -n 10 urban-agriculture.csv >> nuevo.txt
+
+# las primeras 3 filas de las ultimas 5
+# el pipeline | hace que yo le mande la salida de un comando como salida a otra comando
+tail -n 5 secuencia.csv | head -n 3
+
+# con cut puedo traer una columan específica
+ cut -d"," -f2 demo.txt  
+
+# el principios de linea es ^y el final es $
+sed 's/^\([0-9]\)$/0\1/g' < sort.txt | sort
+
+# para extraer los datos unicos de un archivo
+sort unicas.txt | uniq 
+
+head -n 1 urban-agriculture.csv | tr ',' '\n' | sort
+
+#grep es el buscar
+ grep "/01/" demo.txt 
+
+# en un notebook de python
+%% sh
+pwd
+
+%% sh
+ls
+
+# podemos guardar el resultado en una variable de python
+x = !ls -1
+x
+
+# vamos a crear el comando 'colab' en el la siguiente carpeta
+/usr/local/bin
+
+# el archivo colab tiene esto por dentro:
+docker run --rm -it -v "$PWD":/datalake --name colab -p 8888:8888 -p 5000:5000 jdvelasq/colab:20200402
+
+# luego ejecutamos el comando colab que creamos
+colab
+
+#======================
+Clase de pyhon
+#======================
+# instalamos csvkit
+sudo apt-get install -y csvkit
+
+# si quiero actualizar los paquetes
+sudo apt update
+
+# tutorial a nivel estandar de SQL
+https://www.w3schools.com/sql/
+
+# vamos a aprender a
+1. consultar - select
+2. eliminar - update
+3. actualizar - delete
+4. insertar - insert
+
+CRUD - Create - Read - Update - Delete
+
+# consulta para que me muestre los nombres que empiezan por o
+csvsql --query 'select firstname, color from persons where color like "o%" order by firstname' persons.csv
+
+# para que traiga todos los campos que tienen la expresion 'ora'
+csvsql --query 'select firstname, color from persons where color like "%ora%" order by firstname' persons.csv
+
+CONCEPTO:
+una función pura depende de SI misma :)
+
+Encapsulamiento de parametros
