@@ -2,6 +2,10 @@ CIENCIA DE LOS DATOS
 
 Comandos de CLASE
 
+#----------------------------------------------
+# Clase 1
+#----------------------------------------------
+
 Comandos 
 head -n 1 urban-agriculture.csv | tr ',' '\n'
 
@@ -91,3 +95,6 @@ CONCEPTO:
 una función pura depende de SI misma :)
 
 Encapsulamiento de parametros
+
+
+#----------------------------------------------
